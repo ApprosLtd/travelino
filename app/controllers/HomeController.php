@@ -2,6 +2,8 @@
 
 class HomeController extends BaseController {
 
+    public $layout = 'hello';
+    
 	/*
 	|--------------------------------------------------------------------------
 	| Default Home Controller
@@ -14,10 +16,33 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
-	public function showWelcome()
+	public function getIndex()
 	{
-		return View::make('hello');
+        //$this->layout->regions = Region::paginate(30);
+        
+		$this->layout->regions = Country::paginate(30);
 	}
+    
+    
+    public function anyContent()
+    {
+        $titles = Input::get('titles');
+        
+        $url = 'http://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=' . $titles;
+        
+        $data = file_get_contents($url);
+        
+        $data = json_decode($data);
+        
+        $pages = (array) $data->query->pages;
+        
+        $page = current($pages);
+        
+        $revision = (array) $page->revisions[0];
+        
+        $content = $revision['*'];
+        
+        return $content;
+    }
 
 }
