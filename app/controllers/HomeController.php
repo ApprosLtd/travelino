@@ -1,5 +1,7 @@
 <?php
 
+use \Michelf\Markdown;
+
 class HomeController extends BaseController {
 
     public $layout = 'hello';
@@ -20,7 +22,7 @@ class HomeController extends BaseController {
 	{
         //$this->layout->regions = Region::paginate(30);
         
-		$this->layout->regions = Country::paginate(30);
+		$this->layout->regions = Region::city()->paginate(30);
 	}
     
     
@@ -34,13 +36,20 @@ class HomeController extends BaseController {
         
         $data = json_decode($data);
         
+        print_r($data);
+        
         $pages = (array) $data->query->pages;
         
         $page = current($pages);
         
+        
+        return '';
+        
         $revision = (array) $page->revisions[0];
         
         $content = $revision['*'];
+        
+        $content = Markdown::defaultTransform($content);
         
         return $content;
     }
