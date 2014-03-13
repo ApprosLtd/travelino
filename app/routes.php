@@ -11,4 +11,12 @@
 |
 */
 
+Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'index'){
+    
+    $controller = 'Ajax\\' . ucfirst( strtolower($controller) ) . 'Controller';
+    
+    return App::make($controller)->callAction($action, array());
+});
+
 Route::controller('/', 'HomeController');
+
