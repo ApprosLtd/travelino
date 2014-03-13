@@ -11,6 +11,8 @@
 |
 */
 
+//Route::resource('/ajax/{controller}/{action?}', 'Ajax\RegionController@{$2}');
+
 Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'index'){
     
     $controller = 'Ajax\\' . ucfirst( strtolower($controller) ) . 'Controller';
