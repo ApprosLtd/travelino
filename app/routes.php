@@ -11,6 +11,9 @@
 |
 */
 
+Route::resource('api/cities', 'Ajax\CitiesController');
+Route::resource('api/countries', 'Ajax\CountriesController');
+
 /**
 * Главный роут для AJAX API
 */
@@ -23,7 +26,7 @@ Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'inde
     $controller->callAction($action, array());
     
     $data = array_merge(array(
-        'success' => false
+        //'success' => false
     ), (array) $controller->data);
     
     return Response::json($data);
