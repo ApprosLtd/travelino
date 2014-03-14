@@ -1,0 +1,57 @@
+a:hover{
+    text-decoration: none;
+}
+#sidebar>header>h1>span{
+    font-family: sans-serif;
+}
+#sidebar>nav ul>li>a>span{
+    font-family: sans-serif;
+}
+
+#sidebar>nav ul>li>a {
+    height: 26px;
+    padding: 0 10px;
+    line-height: 25px;
+}
+
+#sidebar>nav>ul>li>a.active, #sidebar>nav>ul>li:hover {
+    background-color: #292929;
+    color: #FFF;
+}
+#sidebar>nav ul>li>a.active {
+    position: relative;
+}
+#sidebar>nav ul>li>a.active:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 26px;
+    top: 0;
+    right: 0;
+    background: #018CDD;
+}
+
+.full-height{
+    height: 100%;
+    min-height: 100%;
+}
+
+.layout{
+    
+}
+.layout .intro-side{
+    background: #0080C0;
+    display: inline-block;
+    padding: 100px 50px 20px 200px;
+}
+.layout .intro-side .intro-wrapper{
+    width: 300px;
+}
+.layout .intro-side .intro-title{
+    color: #EFF5F8;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.layout .content-side{
+    display: inline-block;
+}
