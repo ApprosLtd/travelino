@@ -14,7 +14,7 @@
       <div class="col-lg-3">
         <ul>
         <?
-        if (count($regions) > 0) {
+        if (isset($regions) AND count($regions) > 0) {
             foreach ($regions AS $region) {
                 $lang   = $region->lang();
                 $center = $region->center();
