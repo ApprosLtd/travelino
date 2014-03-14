@@ -34,18 +34,25 @@ a:hover{
 .full-height{
     height: 100%;
     min-height: 100%;
+    max-height: 100%;
 }
 
+body{
+    overflow: hidden;
+    font-family: arial;
+}
 .layout{
     
 }
 .layout .intro-side{
     background: #0080C0;
-    display: inline-block;
+    background: url(/img/cool-background_018.jpg) center no-repeat;
+    float: left;
     padding: 100px 50px 20px 200px;
+    width: 25%;
 }
 .layout .intro-side .intro-wrapper{
-    width: 300px;
+   /* width: 300px;*/
 }
 .layout .intro-side .intro-title{
     color: #EFF5F8;
@@ -53,5 +60,115 @@ a:hover{
     font-weight: normal;
 }
 .layout .content-side{
+    float: right;
+    width: 75%;
+    overflow: hidden;
+}
+.layout .content-side ol{
+    width: 5200px;
+    list-style: none;
+}
+.layout .covert-side{
+    float: left;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}
+
+.layout .covert-side-wrapper{
+    padding: 1px;
+}
+
+.roll-item{
     display: inline-block;
+    margin: 0 -2px 1px 2px;
+    padding: 0;
+}
+.roll-item .roll-image{
+    height: 300px;
+    width: 300px;
+}
+.roll-item .roll-image img{
+    transition: all 0.2s linear;
+    display: block;
+    position: absolute;
+}
+.roll-item:hover .roll-image img{
+    transform: scale(1.1);
+}
+.roll-item .roll-info{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    margin-top: -300px;
+    background: rgba(0,0,0,0.2);
+    box-shadow: inset 0px -96px 40px rgba(0,0,0,0.4);
+}
+.roll-item .roll-info .roll-info-wrapper{
+    padding: 20px;
+    text-align: right;
+    color: #FFF;
+    font-family: arial;
+}
+.roll-item .roll-info .roll-info-wrp-top{
+    height: 200px;
+}
+.roll-item .roll-info .roll-info-wrp-bottom{
+    height: 50px;
+    text-align: left;
+}
+.roll-item .roll-info .roll-info-wrp-stat{
+    border-top: 1px dotted rgba(255,255,255,0.5);
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.roll-item .roll-info h2{
+    font-size: 27px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+.roll-item .roll-info h3{
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+.roll-item .roll-info h3 a{
+    color: #FFF;
+}
+.roll-item .roll-info h3 a:hover{
+    color: #FFFFE6;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.6);
+}
+.roll-item .roll-info .roll-info-hoverer{
+    position: absolute;
+    width: 87%;
+    margin-top: -150px;
+    text-align: center;
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+footer .copyright{
+    background: #2E2E2E;
+    color: #A3A3A3;
+    text-align: center;
+    font-size: 11px;
+    font-family: tahoma;
+    padding: 2px 0 3px;
+}
+
+.place-information{
+    padding: 10px 0 10px 10px;
+    height: 640px;
+}
+.place-information p{
+    margin: 0 0 5px;
+}
+.place-information h4{
+    margin: 15px 0 5px;
+    color: #000;
 }
