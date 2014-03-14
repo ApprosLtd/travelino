@@ -11,14 +11,26 @@
 |
 */
 
-//Route::resource('/ajax/{controller}/{action?}', 'Ajax\RegionController@{$2}');
-
+/**
+* Главный роут для AJAX API
+*/
 Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'index'){
     
     $controller = 'Ajax\\' . ucfirst( strtolower($controller) ) . 'Controller';
     
-    return App::make($controller)->callAction($action, array());
+    $controller = App::make($controller);
+    
+    $controller->callAction($action, array());
+    
+    $data = array_merge(array(
+        'success' => false
+    ), (array) $controller->data);
+    
+    return Response::json($data);
 });
 
-Route::controller('/', 'HomeController');
 
+/**
+* Роут домашней страницы
+*/
+Route::controller('/', 'HomeController');
