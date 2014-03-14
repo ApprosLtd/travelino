@@ -4,7 +4,7 @@ use \Michelf\Markdown;
 
 class HomeController extends BaseController {
 
-    public $layout = 'hello';
+    public $layout = 'home';
     
 	/*
 	|--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ class HomeController extends BaseController {
 	{
         //$this->layout->regions = Region::paginate(30);
         
-		$this->layout->regions = Region::city()->paginate(30);
+		//$this->layout->regions = Region::city()->paginate(30);
 	}
     
     
