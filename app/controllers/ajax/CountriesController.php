@@ -2,7 +2,7 @@
 
 namespace Ajax;
 
-class CitiesController extends AjaxController
+class CountriesController extends AjaxController
 {    
     protected $limit = 50;
     
@@ -13,9 +13,9 @@ class CitiesController extends AjaxController
         $records = \City::take(50)->get();
         
         if ($records) {
-            $data = array('cities' => array());
+            $data = array('countries' => array());
             foreach ($records AS $rec) {
-                $data['cities'][] = array(
+                $data['countries'][] = array(
                     'id'   => $rec->RegionID,
                     'cid'  => $rec->RegionID,
                     'name' => $rec->RegionName
@@ -34,7 +34,7 @@ class CitiesController extends AjaxController
         
         if ($record) {
             $data = array(
-                'city' => array(
+                'country' => array(
                     'id'   => $record->RegionID,
                     'cid'  => $record->RegionID,
                     'name' => $record->RegionName,
