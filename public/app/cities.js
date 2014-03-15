@@ -78,7 +78,7 @@ App.CitiesView = Ember.View.extend({
     classNames: ['full-height'],
     didInsertElement: function(){        
         $('.scrollbar').mCustomScrollbar({
-            theme: 'dark-thick',
+            theme: 'light-2',
             horizontalScroll: true,
             autoDraggerLength: false
         });
