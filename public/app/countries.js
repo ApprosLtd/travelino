@@ -4,7 +4,11 @@
 
 App.CountryModel = DS.Model.extend({
     cid: DS.attr('number'),
-    name: DS.attr('string')
+    name_en: DS.attr('string'),
+    name_ru: DS.attr('string'),
+    continent_id: DS.attr('number'), 
+    continent_name_en: DS.attr('string'), 
+    continent_name_ru: DS.attr('string') 
 });
 
 App.CountryView = Ember.View.extend({
