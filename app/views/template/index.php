@@ -5,16 +5,16 @@
   </header>
   <nav>
     <ul>
-      <li>{{#link-to 'continents'}}<i class="trending_16"></i><span>Континенты</span>{{/link-to}}</li>
-      <li>{{#link-to 'countries'}}<i class="people_16"></i><span>Страны</span>{{/link-to}}</li>
-      <li>{{#link-to 'cities'}}<i class="songs_16"></i><span>Города</span>{{/link-to}}</li>
-      <li>{{#link-to 'places'}}<i class="radio_16"></i><span>Места</span>{{/link-to}}</li>
+      <li><a href="/continents"><i class="trending_16"></i><span>Континенты</span></a></li>
+      <li><a href="/countries"><i class="people_16"></i><span>Страны</span></a></li>
+      <li><a href="/cities"><i class="songs_16"></i><span>Города</span></a></li>
+      <li><a href="/places"><i class="radio_16"></i><span>Места</span></a></li>
       <li>.</li>
-      <li>{{#link-to 'airports'}}<i class="mixes_16"></i><span>Авиабилеты</span>{{/link-to}}</li>
-      <li>{{#link-to 'hotels'}}<i class="video_16"></i><span>Гостиницы</span>{{/link-to}}</li>
+      <li><a href="/airports"><i class="mixes_16"></i><span>Авиабилеты</span></a></li>
+      <li><a href="/hotels"><i class="video_16"></i><span>Гостиницы</span></a></li>
       <li>.</li>
-      <li>{{#link-to 'tours'}}<i class="radio_16"></i><span>Туры</span>{{/link-to}}</li>
-      <li>{{#link-to 'trails'}}<i class="radio_16"></i><span>Маршруты</span>{{/link-to}}</li>
+      <li><a href="/tours"><i class="radio_16"></i><span>Туры</span></a></li>
+      <li><a href="/trails"><i class="radio_16"></i><span>Маршруты</span></a></li>
     </ul>
   </nav>
 </section>
