@@ -13,6 +13,7 @@
 
 Route::resource('api/cities', 'Ajax\CitiesController');
 Route::resource('api/countries', 'Ajax\CountriesController');
+Route::resource('api/pix', 'Ajax\PixController');
 
 /**
 * Главный роут для AJAX API
