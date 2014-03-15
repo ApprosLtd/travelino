@@ -34,7 +34,10 @@ Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'inde
 });
 
 
-/**
-* Роут домашней страницы
-*/
-Route::controller('/', 'HomeController');
+
+Route::controller('continents', 'ContinentsController');
+Route::controller('countries',  'CountriesController');
+Route::controller('cities',     'CitiesController');
+Route::controller('places',     'PlacesController');
+
+Route::controller('/',          'HomeController');
