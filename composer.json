@@ -7,11 +7,16 @@
         {
             "url": "https://github.com/michelf/php-markdown.git",
             "type": "git"
+        },
+        {
+            "url": "https://github.com/serovvitaly/laravel-oauth.git",
+            "type": "git"
         }
     ],
 	"require": {
 		"laravel/framework": "4.1.*",
-        "michelf/php-markdown": "1.4.x-dev"
+        "michelf/php-markdown": "1.4.x-dev",
+        "serovvitaly/laravel-oauth": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
