@@ -8,6 +8,11 @@ App.ApplicationAdapter = DS.RESTAdapter.extend({
     host: '/api'
 });
 
+App.Router.reopen({
+    location: 'history'
+})
+
+
 App.Router.map(function(){
     this.resource('continents');
     this.resource('countries', function(){
