@@ -13,8 +13,8 @@
     <div class="roll-image"><img alt="" src="http://lorempixel.com/300/300/city/?i={{id}}"></div>
     <div class="roll-info"><div class="roll-info-wrapper">
       <div class="roll-info-wrp-top">
-        <h2>{{name}}</h2>
-        <h3>{{#link-to 'country' this}}Евразия{{/link-to}}</h3>
+        <h2>{{name_ru}}</h2>
+        <h3>{{#link-to 'country' this.continent_id}}{{continent_name_ru}}{{/link-to}}</h3>
       </div>
       <div class="roll-info-wrp-bottom">
         В первом примере мы будем использовать только некоторые базовые переходы, чтобы создать неплохой эффект при наведении курсора

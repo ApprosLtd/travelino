@@ -3,8 +3,8 @@
   <img alt="" style="width:100%" src="http://lorempixel.com/600/300/city?i=3">
 </div>
 <section style="padding: 10px">
-  <h2>{{name}}</h2>
-  <h3>Чехия</h3>
+  <h2>{{name_ru}}</h2>
+  <h3>{{continent_name_ru}}</h3>
 </section>
 <div class="place-information">
   <section>
