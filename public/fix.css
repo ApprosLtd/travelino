@@ -1,27 +1,43 @@
+@import url(http://reset5.googlecode.com/hg/reset.min.css);
+
+html, body{
+    height: 100%;
+}
+body{
+    overflow: hidden;
+    font: 13px/13px arial;
+}
+p{
+    line-height: 14px;
+    color: #585858;
+}
+h1,h2,h3,h4{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 a:hover{
     text-decoration: none;
 }
-#sidebar>header>h1>span{
+.flymenu>header>h1>span{
     font-family: sans-serif;
 }
-#sidebar>nav ul>li>a>span{
+.flymenu>nav ul>li>a>span{
     font-family: sans-serif;
 }
 
-#sidebar>nav ul>li>a {
+.flymenu>nav ul>li>a {
     height: 26px;
     padding: 0 10px;
     line-height: 25px;
 }
 
-#sidebar>nav>ul>li>a.active, #sidebar>nav>ul>li:hover {
+.flymenu>nav>ul>li>a.active, .flymenu>nav>ul>li:hover {
     background-color: #292929;
     color: #FFF;
 }
-#sidebar>nav ul>li>a.active {
+.flymenu>nav ul>li>a.active {
     position: relative;
 }
-#sidebar>nav ul>li>a.active:after {
+.flymenu>nav ul>li>a.active:after {
     content: '';
     position: absolute;
     width: 4px;
@@ -37,10 +53,7 @@ a:hover{
     max-height: 100%;
 }
 
-body{
-    overflow: hidden;
-    font-family: arial;
-}
+
 .layout{
     
 }
@@ -63,6 +76,7 @@ body{
     float: right;
     width: 75%;
     overflow: hidden;
+    background: #000;
 }
 .layout .content-side ol{
     width: 5200px;
@@ -75,6 +89,15 @@ body{
 
 .layout .covert-side-wrapper{
     padding: 1px;
+}
+.layout .covert-side-wrapper h2{
+    font-size: 3em;
+    line-height: 0.8em;
+    margin-bottom: 10px;
+}
+.layout .covert-side-wrapper h3{
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .roll-item{
@@ -171,4 +194,128 @@ footer .copyright{
 .place-information h4{
     margin: 15px 0 5px;
     color: #000;
+    font-size: 2.2em;
+}
+
+
+
+
+.flymenu {
+    z-index: 2;
+    width: 136px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    display: block;
+    vertical-align: baseline;
+    font-size: 100%;
+    font: inherit;
+}
+.flymenu>header {
+    border-radius: 2px 2px 0 0;
+}
+.flymenu>header, .flymenu>div, .flymenu>nav {
+    background-color: #313131;
+    box-shadow: 0 0 7px 0 rgba(50,50,50,.45);
+}
+.flymenu>nav {
+    padding-bottom: 8px;
+    border-top: 1px solid #282828;
+    border-radius: 0 0 2px 2px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.flymenu>header, .flymenu>div, .flymenu>nav {
+    background-color: #313131;
+    box-shadow: 0 0 7px 0 rgba(50,50,50,.45);
+}
+.flymenu>header>h1 {
+    min-height: 40px;
+    padding: 3px 3px 2px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #FFF;
+    word-wrap: break-word;
+    font-weight: 400;
+    margin: 0;
+}
+.flymenu>header>h1>span {
+    font-family: sans-serif;
+}
+.flymenu>header>h1>span {
+    display: inline-block;
+    padding: 12px 8px;
+    text-overflow: ellipsis;
+    max-width: 112px;
+}
+.flymenu>nav ul {
+    list-style: none;
+    border-bottom: 1px solid #3C3C3C;
+    color: #757575;
+    margin: 0;
+    padding: 0;
+}
+.flymenu>nav ul>li {
+    transition: background-color .8s;
+    -moz-transition: background-color .8s;
+    -webkit-transition: background-color .8s;
+    line-height: 12px;
+}
+.flymenu a:not(.button) {
+    color: inherit;
+}
+.flymenu>nav ul>li>a {
+    display: block;
+    height: 26px;
+    padding: 0 10px;
+    border-top: 1px solid #3c3c3c;
+    border-bottom: 1px solid #282828;
+    line-height: 23px;
+}
+.flymenu a {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.flymenu>nav ul>li>a>i {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.flymenu>nav ul>li>a>span {
+    font-family: sans-serif;
+}
+.flymenu>nav ul>li>a>span {
+    vertical-align: middle;
+}
+
+.flymenu.covert {
+    position: absolute;
+    margin-left: -138px;
+    margin-top: -2px;
+    left: inherit;
+    top: inherit;
+}
+.flymenu.covert>nav {
+    padding: 2px 0;
+    border-radius: 2px;
+}
+
+.flymenu.light>header, .flymenu.light>div, .flymenu.light>nav {
+    background-color: #F0F0F0;
+    box-shadow: 0 0 7px 0 rgba(50,50,50,.45);
+}
+.flymenu.light>nav ul>li>a {
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #DBDBDB;
+}
+.flymenu.light>nav ul>li>a:hover {
+   /* background: #018CDD;*/
+}
+.flymenu.light>nav {
+    border-top: 1px solid #FFFFFF;
+}
+.flymenu.light>nav ul {
+    border-bottom: 1px solid #FFFFFF;
+    color: #3C3C3C;
 }
