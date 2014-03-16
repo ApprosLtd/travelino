@@ -4,11 +4,13 @@
 
 App.CountryModel = DS.Model.extend({
     cid: DS.attr('number'),
+    description_ru: DS.attr('string'),
+    short_description_ru: DS.attr('string'),
     name_en: DS.attr('string'),
     name_ru: DS.attr('string'),
     continent_id: DS.attr('number'), 
     continent_name_en: DS.attr('string'), 
-    continent_name_ru: DS.attr('string') 
+    continent_name_ru: DS.attr('string')
 });
 
 App.CountryView = Ember.View.extend({
@@ -42,14 +44,6 @@ App.CountryView = Ember.View.extend({
         $('.content-side').animate({
             width: '50%'
         }, 200);
-        
-        return;
-        
-        $('.scrollbar').mCustomScrollbar({
-            theme: 'dark-thick',
-            horizontalScroll: true,
-            autoDraggerLength: false
-        });
     },
     willDestroyElement: function(){
         $('.intro-side').css('width', '25%');

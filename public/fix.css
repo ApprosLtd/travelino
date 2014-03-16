@@ -8,7 +8,7 @@ body{
     font: 13px/13px arial;
 }
 p{
-    line-height: 14px;
+    line-height: 17px;
     color: #585858;
 }
 h1,h2,h3,h4{
@@ -137,6 +137,11 @@ a:hover{
 .roll-item .roll-info .roll-info-wrp-bottom{
     height: 50px;
     text-align: left;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.roll-item:hover .roll-info .roll-info-wrp-bottom{
+    opacity: 1;
 }
 .roll-item .roll-info .roll-info-wrp-stat{
     border-top: 1px dotted rgba(255,255,255,0.5);
@@ -189,7 +194,8 @@ footer .copyright{
     height: 640px;
 }
 .place-information p{
-    margin: 0 0 5px;
+    margin: 0 0 20px;
+    line-height: 17px;
 }
 .place-information h4{
     margin: 15px 0 5px;
