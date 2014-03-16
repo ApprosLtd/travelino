@@ -4,7 +4,11 @@
 
 App.CityModel = DS.Model.extend({
     cid: DS.attr('number'),
-    name: DS.attr('string')
+    name_en: DS.attr('string'),
+    name_ru: DS.attr('string'),
+    country_id: DS.attr('number'), 
+    country_name_en: DS.attr('string'), 
+    country_name_ru: DS.attr('string')
 });
 
 App.CityView = Ember.View.extend({

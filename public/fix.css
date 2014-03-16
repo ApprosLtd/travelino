@@ -291,10 +291,11 @@ footer .copyright{
 
 .flymenu.covert {
     position: absolute;
-    margin-left: -138px;
+    margin-left: -102px;
     margin-top: -2px;
     left: inherit;
     top: inherit;
+    width: 100px;
 }
 .flymenu.covert>nav {
     padding: 2px 0;
