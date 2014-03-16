@@ -10,7 +10,14 @@ class PixController extends AjaxController
     {
         $data = array(400);
         
-        $data = new TwitterOAuth('500px');
+        $connection = new TwitterOAuth('500px');
+        
+        $data = $connection->get('photos/search', array(
+            'term' => 'москва',
+            'rpp' => 5,
+            'only' => 'City & Architecture',
+            'image_size' => 3
+        ));
         
         
         return \Response::json($data);
