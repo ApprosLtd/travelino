@@ -6,6 +6,7 @@ html, body{
 body{
     overflow: hidden;
     font: 13px/13px arial;
+    background: #ACACAC;
 }
 p{
     line-height: 17px;
@@ -13,6 +14,18 @@ p{
 }
 h1,h2,h3,h4{
     font-family: 'Open Sans Condensed', sans-serif;
+}
+h1{
+    font-size: 32px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 16px;
 }
 a:hover{
     text-decoration: none;
@@ -69,7 +82,6 @@ a:hover{
 }
 .layout .intro-side .intro-title{
     color: #EFF5F8;
-    font-family: sans-serif;
     font-weight: normal;
 }
 .layout .content-side{
@@ -85,6 +97,7 @@ a:hover{
 .layout .covert-side{
     float: left;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    background: #FFF;
 }
 
 .layout .covert-side-wrapper{
