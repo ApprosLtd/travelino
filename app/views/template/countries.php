@@ -16,9 +16,7 @@
         <h2>{{name_ru}}</h2>
         <h3>{{#link-to 'country' this.continent_id}}{{continent_name_ru}}{{/link-to}}</h3>
       </div>
-      <div class="roll-info-wrp-bottom">
-        В первом примере мы будем использовать только некоторые базовые переходы, чтобы создать неплохой эффект при наведении курсора
-      </div>
+      <div class="roll-info-wrp-bottom">{{{short_description_ru}}}</div>
       <div class="roll-info-wrp-stat">
           2000
       </div>

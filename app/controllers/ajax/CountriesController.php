@@ -10,7 +10,7 @@ class CountriesController extends AjaxController
     {
         $page = \Input::get('page', 1);
         
-        $records = \Country::take(50)->get();
+        $records = \Country::where('description_ru', '!=', '')->take(50)->get();
         
         if ($records) {
             $data = array('countries' => array());
@@ -18,6 +18,7 @@ class CountriesController extends AjaxController
                 $data['countries'][] = array(
                     'id'   => $record->id,
                     'cid'  => $record->id,
+                    'short_description_ru'  => str_limit( strip_tags($record->description_ru) , 130, '...'),
                     'name_en' => $record->lang('en_US')->name,
                     'name_ru' => $record->lang('ru_RU')->name,
                     'continent_id' => $record->continent()->id,
@@ -41,6 +42,7 @@ class CountriesController extends AjaxController
                 'country' => array(
                     'id'   => $record->id,
                     'cid'  => $record->id,
+                    'description_ru'  => $record->description_ru,
                     'name_en' => $record->lang('en_US')->name,
                     'name_ru' => $record->lang('ru_RU')->name,
                     'continent_id' => $record->continent()->id,
