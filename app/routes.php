@@ -36,8 +36,11 @@ Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'inde
 
 
 Route::controller('continents', 'ContinentsController');
-Route::controller('countries',  'CountriesController');
-Route::controller('cities',     'CitiesController');
+
+Route::get('countries/{id?}', 'CountriesController@getIndex');
+
+Route::get('cities/{id?}',    'CitiesController@getIndex');
+
 Route::controller('places',     'PlacesController');
 
 Route::controller('/',          'HomeController');

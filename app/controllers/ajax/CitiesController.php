@@ -14,11 +14,15 @@ class CitiesController extends AjaxController
         
         if ($records) {
             $data = array('cities' => array());
-            foreach ($records AS $rec) {
+            foreach ($records AS $record) {
                 $data['cities'][] = array(
-                    'id'   => $rec->RegionID,
-                    'cid'  => $rec->RegionID,
-                    'name' => $rec->RegionName
+                    'id'   => $record->id,
+                    'cid'  => $record->id,
+                    'name_en' => $record->lang('en_US')->name,
+                    'name_ru' => $record->lang('ru_RU')->name,
+                    'country_id' => $record->country()->id,
+                    'country_name_en' => $record->country()->lang('en_US')->name,
+                    'country_name_ru' => $record->country()->lang('ru_RU')->name,
                 );
             }
         } else {
@@ -35,9 +39,13 @@ class CitiesController extends AjaxController
         if ($record) {
             $data = array(
                 'city' => array(
-                    'id'   => $record->RegionID,
-                    'cid'  => $record->RegionID,
-                    'name' => $record->RegionName,
+                    'id'   => $record->id,
+                    'cid'  => $record->id,
+                    'name_en' => $record->lang('en_US')->name,
+                    'name_ru' => $record->lang('ru_RU')->name,
+                    'country_id' => $record->country()->id,
+                    'country_name_en' => $record->country()->lang('en_US')->name,
+                    'country_name_ru' => $record->country()->lang('ru_RU')->name,
                 )
             );
         } else {
