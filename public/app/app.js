@@ -27,3 +27,24 @@ App.Router.map(function(){
     this.resource('places');
     this.resource('trails');
 });
+
+App.rerenderGridline = function(view){
+    
+    var storeRecords = view.controller.get('model').get('length');
+    
+    if (storeRecords < 1) {
+        return;
+    }
+    
+    var gridlineRows = 3;
+    
+    var gridlineWidth = Math.ceil(storeRecords / gridlineRows) * 304;
+    
+    $('.gridline-container').width( gridlineWidth );
+    
+    $('.scrollbar').mCustomScrollbar({
+        theme: 'light-2',
+        horizontalScroll: true,
+        autoDraggerLength: true
+    });
+}

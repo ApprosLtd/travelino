@@ -7,7 +7,7 @@
 {{outlet}}
 </div>
 <div class="content-side full-height scrollbar">
-<ol>
+<ol class="gridline-container">
 {{#each}}
   <li class="roll-item">
     <div class="roll-image"><img alt="" src="http://lorempixel.com/300/300/city/?i={{id}}"></div>

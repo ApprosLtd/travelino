@@ -91,7 +91,7 @@ a:hover{
     background: #000;
 }
 .layout .content-side ol{
-    width: 5200px;
+    width: 2130px;
     list-style: none;
 }
 .layout .covert-side{
@@ -338,4 +338,12 @@ footer .copyright{
 .flymenu.light>nav ul {
     border-bottom: 1px solid #FFFFFF;
     color: #3C3C3C;
+}
+
+
+.mCS-light-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    height: 8px !important;
+}
+.mCS-light-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+    height: 8px !important;
 }

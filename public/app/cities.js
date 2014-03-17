@@ -81,18 +81,6 @@ App.CitiesRoute = Ember.Route.extend({
 App.CitiesView = Ember.View.extend({
     classNames: ['full-height'],
     didInsertElement: function(){        
-        $('.scrollbar').mCustomScrollbar({
-            theme: 'light-2',
-            horizontalScroll: true,
-            autoDraggerLength: false
-        });
-    }
-});
-
-App.CitiesController = Ember.ArrayController.extend({
-    actions: {
-        briefAboutCity: function(){
-            //
-        }
+        App.rerenderGridline(this);
     }
 });

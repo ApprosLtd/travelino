@@ -3,6 +3,7 @@
 */
 
 App.CountryModel = DS.Model.extend({
+    id: 'hello_world',
     cid: DS.attr('number'),
     description_ru: DS.attr('string'),
     short_description_ru: DS.attr('string'),
@@ -24,7 +25,7 @@ App.CountryView = Ember.View.extend({
         $('.place-information').mCustomScrollbar({
             theme: 'dark',
             horizontalScroll: false,
-            autoDraggerLength: false
+            autoDraggerLength: true
         });
         
         return;
@@ -65,6 +66,7 @@ App.CountryView = Ember.View.extend({
 App.CountriesRoute = Ember.Route.extend({
     model: function(){
         //if (this.get('isLoaded')) return;
+        //console.log('CountriesRoute::model');
         return this.store.find('country', {page: 1});
     }
 });
@@ -72,18 +74,6 @@ App.CountriesRoute = Ember.Route.extend({
 App.CountriesView = Ember.View.extend({
     classNames: ['full-height'],
     didInsertElement: function(){        
-        $('.scrollbar').mCustomScrollbar({
-            theme: 'light-2',
-            horizontalScroll: true,
-            autoDraggerLength: false
-        });
-    }
-});
-
-App.CountriesController = Ember.ArrayController.extend({
-    actions: {
-        briefAboutCity: function(){
-            //
-        }
+        App.rerenderGridline(this);
     }
 });
