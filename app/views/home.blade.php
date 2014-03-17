@@ -4,12 +4,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title></title>
   <script type="text/javascript" src="/packages/jquery/jquery-2.1.0.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/packages/bootstrap/css/bootstrap.min.css">
+  <!--link rel="stylesheet" type="text/css" href="/packages/bootstrap/css/bootstrap.min.css"-->
   <script type="text/javascript" src="/packages/handlebars/handlebars-v1.3.0.js"></script>
   <script type="text/javascript" src="/packages/ember/ember-1.4.0.js"></script>
   <script type="text/javascript" src="/packages/ember/ember-data.js"></script>  
 
+  <!-- sprite.min.css - стиль для отображения иконок взяты с myspace.com -->
   <link rel="stylesheet" type="text/css" href="/sprite.min.css">
+  
   <link rel="stylesheet" type="text/css" href="/fix.css">
   
   <script type="text/javascript" src="/packages/custom-scrollbar/jquery.mousewheel.min.js"></script>
@@ -29,7 +31,7 @@
 <body>
   
   <script type="text/x-handlebars">
-  @include('template.index');
+  @include('template.index')
   </script>
   
   @yield('content')
