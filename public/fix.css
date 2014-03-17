@@ -5,7 +5,7 @@ html, body{
 }
 body{
     overflow: hidden;
-    font: 13px/13px arial;
+    font: 13px/13px sans-serif;
     background: #ACACAC;
 }
 p{
