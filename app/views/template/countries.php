@@ -10,7 +10,7 @@
 <ol class="gridline-container">
 {{#each}}
   <li class="roll-item">
-    <div class="roll-image"><img alt="" src="http://lorempixel.com/300/300/city/?i={{id}}"></div>
+    <div class="roll-image"><img alt="" src="/data/images/23466347645324.jpg"></div>
     <div class="roll-info"><div class="roll-info-wrapper">
       <div class="roll-info-wrp-top">
         <h2>{{name_ru}}</h2>
