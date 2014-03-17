@@ -27,6 +27,9 @@ h3{
 h4{
     font-size: 16px;
 }
+a{
+    text-decoration: none;
+}
 a:hover{
     text-decoration: none;
 }
@@ -74,11 +77,11 @@ a:hover{
     background: #0080C0;
     background: url(/img/cool-background_018.jpg) center no-repeat;
     float: left;
-    padding: 100px 50px 20px 200px;
     width: 25%;
 }
 .layout .intro-side .intro-wrapper{
    /* width: 300px;*/
+   margin: 100px 50px 20px 200px;
 }
 .layout .intro-side .intro-title{
     color: #EFF5F8;
@@ -291,6 +294,7 @@ footer .copyright{
     border-top: 1px solid #3c3c3c;
     border-bottom: 1px solid #282828;
     line-height: 23px;
+    text-decoration: none;
 }
 .flymenu a {
     user-select: none;

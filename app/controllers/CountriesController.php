@@ -2,7 +2,7 @@
 
 class CountriesController extends BaseController
 {
-    public $layout = 'layout.countries';
+    public $layout = 'layout.index';
     
     public function getIndex()
     {

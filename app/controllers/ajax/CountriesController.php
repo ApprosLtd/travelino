@@ -4,13 +4,13 @@ namespace Ajax;
 
 class CountriesController extends AjaxController
 {    
-    protected $limit = 50;
+    protected $limit = 30;
     
     public function index()
     {
         $page = \Input::get('page', 1);
         
-        $records = \Country::where('description_ru', '!=', '')->take(50)->get();
+        $records = \Country::where('description_ru', '!=', '')->take(30)->get();
         
         if ($records) {
             $data = array('countries' => array());

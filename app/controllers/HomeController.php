@@ -4,7 +4,7 @@ use \Michelf\Markdown;
 
 class HomeController extends BaseController {
 
-    public $layout = 'home';
+    public $layout = 'layout.index';
     
 	/*
 	|--------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 class PlacesController extends BaseController
 {
-    public $layout = 'layout.places';
+    public $layout = 'layout.index';
     
     public function getIndex()
     {

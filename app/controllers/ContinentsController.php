@@ -2,7 +2,7 @@
 
 class ContinentsController extends BaseController
 {
-    public $layout = 'layout.continents';
+    public $layout = 'layout.index';
     
     public function getIndex()
     {

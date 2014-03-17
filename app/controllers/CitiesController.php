@@ -2,7 +2,7 @@
 
 class CitiesController extends BaseController
 {
-    public $layout = 'layout.cities';
+    public $layout = 'layout.index';
     
     public function getIndex()
     {
