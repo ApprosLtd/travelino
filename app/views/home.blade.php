@@ -17,6 +17,8 @@
   <script type="text/javascript" src="/packages/custom-scrollbar/jquery.mousewheel.min.js"></script>
   <script type="text/javascript" src="/packages/custom-scrollbar/jquery.mCustomScrollbar.js"></script>
   <link rel="stylesheet" type="text/css" href="/packages/custom-scrollbar/jquery.mCustomScrollbar.css">
+
+  <script type="text/javascript" src="/packages/qrcodejs/qrcode.min.js"></script>
   
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   
