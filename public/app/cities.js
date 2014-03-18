@@ -20,10 +20,10 @@ App.CityView = Ember.View.extend({
         $('.content-side').css('width', '50%');
 
         this.qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: "http://travelino.appros.ru/cities/2",
+            text: "Берлин, Германия\nhttp://travelino.appros.ru/cities/2",
             width: 128,
             height: 128,
-            colorDark : "#000000",
+            colorDark : "#A01515",
             colorLight : "#ffffff",
             //correctLevel : QRCode.CorrectLevel.H
         });
