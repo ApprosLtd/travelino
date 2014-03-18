@@ -5,6 +5,7 @@
 <section style="padding: 10px">
   <h2>{{name_ru}}</h2>
   <h3>{{continent_name_ru}}</h3>
+  <div id="qrcode"></div>
 </section>
 <div class="place-information">
   <section>

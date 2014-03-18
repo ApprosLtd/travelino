@@ -22,29 +22,21 @@ App.CountryView = Ember.View.extend({
         $('.covert-side').css('width', '30%');
         $('.content-side').css('width', '50%');
         
+        this.qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "http://travelino.appros.ru/countries/34",
+            width: 80,
+            height: 80,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            //correctLevel : QRCode.CorrectLevel.H
+        });
+
         $('.place-information').mCustomScrollbar({
             theme: 'dark',
             horizontalScroll: false,
             autoDraggerLength: true
         });
         
-        return;
-        
-        $('.intro-side').animate({
-            width: '20%'
-        }, 200);
-        $('.covert-side').animate({
-            width: '30%'
-        }, 200, function(){
-            $('.place-information').mCustomScrollbar({
-                theme: 'dark',
-                horizontalScroll: false,
-                autoDraggerLength: false
-            });
-        });
-        $('.content-side').animate({
-            width: '50%'
-        }, 200);
     },
     willDestroyElement: function(){
         $('.intro-side').css('width', '25%');
