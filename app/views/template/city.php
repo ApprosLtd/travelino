@@ -1,7 +1,7 @@
 <div class="covert-side-wrapper">
 
 <div>
-  <img alt="" style="width:100%" src="http://lorempixel.com/600/300/city?i=3">
+  <img alt="" style="width:100%" src="/data/images/87654323876.jpg">
 </div>
 
 <section class="flymenu covert light">
