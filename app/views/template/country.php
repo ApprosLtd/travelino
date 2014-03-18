@@ -1,6 +1,6 @@
 <div class="covert-side-wrapper">
 <div>
-  <img alt="" style="width:100%" src="/data/images/87654323876.jpg">
+  <img alt="" style="width:100%; height:240px;" src="/data/images/87654323876.jpg">
 </div>
 <section style="padding: 10px">
   <h2>{{name_ru}}</h2>
