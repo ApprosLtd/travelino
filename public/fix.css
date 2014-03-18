@@ -116,6 +116,9 @@ a:hover{
     font-size: 1.4em;
     font-weight: normal;
 }
+.layout .covert-side-wrapper #qrcode{
+    margin-top: 10px;
+}
 
 .roll-item{
     display: inline-block;

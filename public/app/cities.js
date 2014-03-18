@@ -21,8 +21,8 @@ App.CityView = Ember.View.extend({
 
         this.qrcode = new QRCode(document.getElementById("qrcode"), {
             text: "http://travelino.appros.ru/cities/2",
-            width: 80,
-            height: 80,
+            width: 128,
+            height: 128,
             colorDark : "#000000",
             colorLight : "#ffffff",
             //correctLevel : QRCode.CorrectLevel.H
