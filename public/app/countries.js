@@ -23,7 +23,7 @@ App.CountryView = Ember.View.extend({
         $('.content-side').css('width', '50%');
         
         this.qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: "Албания: http://travelino.appros.ru/countries/34",
+            text: "http://travelino.appros.ru/countries/34",
             width: 128,
             height: 128,
             colorDark : "#A01515",
