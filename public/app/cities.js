@@ -15,9 +15,11 @@ App.CityView = Ember.View.extend({
     classNames: ['full-height'],
     didInsertElement: function(){
         
-        $('.intro-side').css('width', '20%');
-        $('.covert-side').css('width', '30%');
-        $('.content-side').css('width', '50%');
+        //$('.intro-side').css('width', '20%');
+        //$('.covert-side').css('width', '30%');
+        //$('.content-side').css('width', '50%');
+        
+        $('.layout').addClass('covert-display');
 
         this.qrcode = new QRCode(document.getElementById("qrcode"), {
             text: "http://travelino.appros.ru/cities/2",
@@ -36,9 +38,10 @@ App.CityView = Ember.View.extend({
         
     },
     willDestroyElement: function(){
-        $('.intro-side').css('width', '25%');
-        $('.covert-side').css('width', '0%');
-        $('.content-side').css('width', '75%');
+        $('.layout').removeClass('covert-display');
+        //$('.intro-side').css('width', '25%');
+        //$('.covert-side').css('width', '0%');
+        //$('.content-side').css('width', '75%');
         return;
         $('.intro-side').animate({
             width: '25%'
