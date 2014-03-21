@@ -18,9 +18,7 @@ App.CountryView = Ember.View.extend({
     classNames: ['full-height'],
     didInsertElement: function(){
         
-        $('.intro-side').css('width', '20%');
-        $('.covert-side').css('width', '30%');
-        $('.content-side').css('width', '50%');
+        $('.layout').addClass('covert-display');
         
         this.qrcode = new QRCode(document.getElementById("qrcode"), {
             text: "http://travelino.appros.ru/countries/34",
@@ -31,6 +29,7 @@ App.CountryView = Ember.View.extend({
             //correctLevel : QRCode.CorrectLevel.H
         });
 
+        return;
         $('.place-information').mCustomScrollbar({
             theme: 'dark',
             horizontalScroll: false,
@@ -39,19 +38,7 @@ App.CountryView = Ember.View.extend({
         
     },
     willDestroyElement: function(){
-        $('.intro-side').css('width', '25%');
-        $('.covert-side').css('width', '0%');
-        $('.content-side').css('width', '75%');
-        return;
-        $('.intro-side').animate({
-            width: '25%'
-        }, 200);
-        $('.covert-side').animate({
-            width: '0%'
-        }, 200);
-        $('.content-side').animate({
-            width: '75%'
-        }, 200);
+        $('.layout').removeClass('covert-display');
     }
 });
 

@@ -1,4 +1,4 @@
-App = Ember.Application.create();
+var App = Ember.Application.create();
 
 App.ApplicationView = Em.View.extend({
     classNames: ['full-height']
@@ -29,7 +29,7 @@ App.Router.map(function(){
 });
 
 App.rerenderGridline = function(view){
-    
+    return;
     var storeRecords = view.controller.get('model').get('length');
     
     if (storeRecords < 1) {

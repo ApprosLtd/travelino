@@ -7,7 +7,7 @@
   <h3>{{continent_name_ru}}</h3>
   <div id="qrcode"></div>
 </section>
-<div class="place-information">
+<div class="place-information scrollbar">
   <section>
     {{{description_ru}}}
   </section>

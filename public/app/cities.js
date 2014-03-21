@@ -29,7 +29,7 @@ App.CityView = Ember.View.extend({
             colorLight : "#ffffff",
             //correctLevel : QRCode.CorrectLevel.H
         });
-        
+        return;
         $('.place-information').mCustomScrollbar({
             theme: 'dark',
             horizontalScroll: false,
@@ -42,16 +42,6 @@ App.CityView = Ember.View.extend({
         //$('.intro-side').css('width', '25%');
         //$('.covert-side').css('width', '0%');
         //$('.content-side').css('width', '75%');
-        return;
-        $('.intro-side').animate({
-            width: '25%'
-        }, 200);
-        $('.covert-side').animate({
-            width: '0%'
-        }, 200);
-        $('.content-side').animate({
-            width: '75%'
-        }, 200);
     }
 });
 
