@@ -10,7 +10,7 @@ class CitiesController extends AjaxController
     {
         $page = \Input::get('page', 1);
         
-        $records = \City::take(50)->cacheTags(array('Cities', 'page-' . $page))->remember(5)->get();
+        $records = \City::take($this->limit)->cacheTags(array('cities-page-' . $page . '-limit-' . $this->limit))->remember(5)->get();
         
         if ($records) {
             
