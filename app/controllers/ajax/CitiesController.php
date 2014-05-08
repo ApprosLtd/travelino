@@ -13,7 +13,9 @@ class CitiesController extends AjaxController
         $records = \City::take(50)->get();
         
         if ($records) {
+            
             $data = array('cities' => array());
+            
             foreach ($records AS $record) {
                 $data['cities'][] = array(
                     'id'   => $record->id,

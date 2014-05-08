@@ -13,7 +13,9 @@ class CountriesController extends AjaxController
         $records = \Country::where('description_ru', '!=', '')->take(30)->get();
         
         if ($records) {
+            
             $data = array('countries' => array());
+            
             foreach ($records AS $record) {
                 $data['countries'][] = array(
                     'id'   => $record->id,

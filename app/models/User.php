@@ -40,8 +40,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Get the token value for the "remember me" session.
 	 *
 	 * @return string
@@ -73,7 +71,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	/**
->>>>>>> FETCH_HEAD
 	 * Get the e-mail address where password reminders are sent.
 	 *
 	 * @return string
