@@ -18,8 +18,4 @@ return array(
 
 	'driver' => 'array',
 
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> FETCH_HEAD

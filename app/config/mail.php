@@ -129,8 +129,4 @@ return array(
 
 	'pretend' => false,
 
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> FETCH_HEAD
