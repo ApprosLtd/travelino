@@ -24,7 +24,11 @@ return array(
 	|
 	| Here you may provide the host address of the SMTP server used by your
 	| applications. A default option is provided that is compatible with
+<<<<<<< HEAD
 	| the Postmark mail service, which will provide reliable delivery.
+=======
+	| the Mailgun mail service which will provide reliable deliveries.
+>>>>>>> FETCH_HEAD
 	|
 	*/
 
@@ -37,7 +41,11 @@ return array(
 	|
 	| This is the SMTP port used by your application to delivery e-mails to
 	| users of your application. Like the host we have set this value to
+<<<<<<< HEAD
 	| stay compatible with the Postmark e-mail application by default.
+=======
+	| stay compatible with the Mailgun e-mail applications by default.
+>>>>>>> FETCH_HEAD
 	|
 	*/
 
@@ -121,4 +129,8 @@ return array(
 
 	'pretend' => false,
 
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> FETCH_HEAD

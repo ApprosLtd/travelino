@@ -15,4 +15,8 @@ return array(
 
 
 
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> FETCH_HEAD

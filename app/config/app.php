@@ -13,7 +13,11 @@ return array(
 	|
 	*/
 
+<<<<<<< HEAD
 	'debug' => true,
+=======
+	'debug' => false,
+>>>>>>> FETCH_HEAD
 
 	/*
 	|--------------------------------------------------------------------------
@@ -56,6 +60,22 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+	| Application Fallback Locale
+	|--------------------------------------------------------------------------
+	|
+	| The fallback locale determines the locale to use when the current one
+	| is not available. You may change the value to correspond to any of
+	| the language folders that are provided through your application.
+	|
+	*/
+
+	'fallback_locale' => 'en',
+
+	/*
+	|--------------------------------------------------------------------------
+>>>>>>> FETCH_HEAD
 	| Encryption Key
 	|--------------------------------------------------------------------------
 	|
@@ -65,7 +85,11 @@ return array(
 	|
 	*/
 
+<<<<<<< HEAD
 	'key' => 'VoVKoDbXVrzRZIuhzYTfunxOTpIfAvbT',
+=======
+	'key' => 'YourSecretKey!!!',
+>>>>>>> FETCH_HEAD
 
 	/*
 	|--------------------------------------------------------------------------

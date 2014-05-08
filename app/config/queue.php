@@ -38,6 +38,10 @@ return array(
 			'driver' => 'beanstalkd',
 			'host'   => 'localhost',
 			'queue'  => 'default',
+<<<<<<< HEAD
+=======
+			'ttr'    => 60,
+>>>>>>> FETCH_HEAD
 		),
 
 		'sqs' => array(
@@ -50,8 +54,14 @@ return array(
 
 		'iron' => array(
 			'driver'  => 'iron',
+<<<<<<< HEAD
 			'project' => 'your-project-id',
 			'token'   => 'your-token',
+=======
+			'host'    => 'mq-aws-us-east-1.iron.io',
+			'token'   => 'your-token',
+			'project' => 'your-project-id',
+>>>>>>> FETCH_HEAD
 			'queue'   => 'your-queue-name',
 		),
 

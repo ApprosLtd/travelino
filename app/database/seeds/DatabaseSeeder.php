@@ -14,4 +14,8 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> FETCH_HEAD

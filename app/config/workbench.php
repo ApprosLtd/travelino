@@ -28,4 +28,8 @@ return array(
 
 	'email' => '',
 
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> FETCH_HEAD
