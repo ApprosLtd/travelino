@@ -26,6 +26,14 @@ class HomeController extends BaseController {
 	}
     
     
+    public function getInfo()
+    {
+        echo phpinfo();
+        
+        return '';
+    }
+    
+    
     public function anyContent()
     {
         $titles = Input::get('titles');
