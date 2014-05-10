@@ -24,7 +24,11 @@ return array(
 	|
 	| Here you may provide the host address of the SMTP server used by your
 	| applications. A default option is provided that is compatible with
+<<<<<<< HEAD
 	| the Postmark mail service, which will provide reliable delivery.
+=======
+	| the Mailgun mail service which will provide reliable deliveries.
+>>>>>>> 9df2e2343e719f83f441914e8c9402ae0fb4de62
 	|
 	*/
 
@@ -37,7 +41,11 @@ return array(
 	|
 	| This is the SMTP port used by your application to delivery e-mails to
 	| users of your application. Like the host we have set this value to
+<<<<<<< HEAD
 	| stay compatible with the Postmark e-mail application by default.
+=======
+	| stay compatible with the Mailgun e-mail applications by default.
+>>>>>>> 9df2e2343e719f83f441914e8c9402ae0fb4de62
 	|
 	*/
 
