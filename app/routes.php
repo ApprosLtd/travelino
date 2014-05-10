@@ -11,6 +11,7 @@
 |
 */
 
+Route::resource('api/articles', 'Ajax\ArticlesController');
 Route::resource('api/cities', 'Ajax\CitiesController');
 Route::resource('api/countries', 'Ajax\CountriesController');
 Route::resource('api/pix', 'Ajax\PixController');
@@ -37,10 +38,14 @@ Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'inde
 
 Route::controller('continents', 'ContinentsController');
 
+Route::get('image/{width?}/{height?}/{id?}', 'ImageController@getIndex');
+
 Route::get('countries/{id?}', 'CountriesController@getIndex');
 
-Route::get('cities/{id?}',    'CitiesController@getIndex');
+Route::get('cities/{id?}', 'CitiesController@getIndex');
 
-Route::controller('places',     'PlacesController');
+Route::controller('places', 'PlacesController');
 
-Route::controller('/',          'HomeController');
+Route::get('node/{id?}', 'HomeController@getNode');
+
+Route::controller('/', 'HomeController');
