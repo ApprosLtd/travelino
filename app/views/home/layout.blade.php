@@ -18,19 +18,25 @@
           </header>
           <nav>
             <ul>
-              <li><a id="ember446" class="ember-view" href="/continents"><i class="trending_16"></i><span>Континенты</span></a></li>
-              <li><a id="ember454" class="ember-view active" href="/countries"><i class="people_16"></i><span>Страны</span></a></li>
-              <li><a id="ember468" class="ember-view" href="/cities"><i class="songs_16"></i><span>Города</span></a></li>
-              <li><a id="ember469" class="ember-view" href="/places"><i class="radio_16"></i><span>Места</span></a></li>
+              <li><a href="/"><span>Главная</span></a></li>
+              <li><a class="active" href="/countries"><i class="people_16"></i><span>Страны</span></a></li>
+              <li><a href="/cities"><i class="songs_16"></i><span>Города</span></a></li>
+              <li><a href="/places"><i class="radio_16"></i><span>Места</span></a></li>
               <li>.</li>
-              <li><a id="ember477" class="ember-view" href="/airports"><i class="mixes_16"></i><span>Авиабилеты</span></a></li>
-              <li><a id="ember485" class="ember-view" href="/hotels"><i class="video_16"></i><span>Гостиницы</span></a></li>
+              <li><a href="/airports"><i class="mixes_16"></i><span>Авиабилеты</span></a></li>
+              <li><a href="/hotels"><i class="video_16"></i><span>Гостиницы</span></a></li>
               <li>.</li>
-              <li><a id="ember493" class="ember-view" href="/tours"><i class="radio_16"></i><span>Туры</span></a></li>
-              <li><a id="ember501" class="ember-view" href="/trails"><i class="radio_16"></i><span>Маршруты</span></a></li>
+              <li><a href="/tours"><i class="radio_16"></i><span>Туры</span></a></li>
+              <li><a href="/trails"><i class="radio_16"></i><span>Маршруты</span></a></li>
             </ul>
           </nav>
         </section>
+        @include('home.share')
+        <div style="text-align: center; margin-top: 20px;">
+        
+          <img src="http://counter.yadro.ru/logo?29.7" alt="">
+
+        </div>
       </div>
       <div class="col-lg-10 row" id="dynamic-content">
       {{$content}}   

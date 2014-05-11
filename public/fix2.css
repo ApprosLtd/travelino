@@ -30,9 +30,13 @@ a:hover{
     text-decoration: none;
 }
 
-article img{
- /*   float: left;*/
+article img:nth-child(odd){
+    float: left;
     margin: 0 10px 0 0;
+}
+article img:nth-child(even){
+    float: right;
+    margin: 0 0 0 10px;
 }
 article img.main-image{
     display: block;
@@ -406,6 +410,28 @@ footer .copyright{
     color: #3C3C3C;
 }
 
+.rigth-side{
+    position: fixed;
+    width: 290px;
+}
+.articles-list{
+    height: 420px;
+    overflow: hidden;
+}
+.articles-list .articles-list-item{
+    text-align: center;
+    height: 140px;
+    width: 47%;
+    float: right;
+    margin-left: 8px
+}
+
+.shares div a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
 
 .mCS-light-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     height: 8px !important;

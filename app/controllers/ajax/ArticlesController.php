@@ -24,12 +24,12 @@ class ArticlesController extends AjaxController
                 
                 foreach ($records AS $record) {
                     
-                    $rec = new stdClass();
+                    $rec = new \stdClass();
                     
                     $rec->id = $record->id;
-                    $rec->note = Str::limit($record->description, 170);
+                    $rec->note = \Str::limit($record->description, 170);
                     $rec->title = $record->title;
-                    $rec->title_limit = Str::limit($record->title, 28);
+                    $rec->title_limit = \Str::limit($record->title, 28);
                     $rec->image = $record->getImage(270, 190);
                     
                     $data[] = $rec;

@@ -57,14 +57,24 @@
             self.showArticles();
         });
         
-        self.router.route('node/:nodeId(/)', 'node', function(nodeId){
-            //console.log('START-NODE-'+nodeId);
-            
+        self.router.route('node/:nodeId(/)', 'node', function(nodeId){            
             self.articlesCollection.get(nodeId).full(function(model){
                 model.articles = self.articlesCollection.models;
                 var view = new  self.views.articleFull({model: model});
                 self.dynamicContent.html('');
                 view.$el.appendTo(self.dynamicContent);
+                $('body').scrollTop(0);
+                //console.log(model.get('note'));
+                /*$('.shares').html(VK.Share.button({
+                    url: 'http://travelino/node/'+model.get('id'),
+                    title: model.get('title'),
+                    description: model.get('note'),
+                    image: 'http://travelino' + model.get('image'),
+                    noparse: true
+                },{
+                    type: 'custom',
+                    text: '<img src="http://vk.com/images/vk32.png" />'
+                }));*/
             });
         });
     }
@@ -75,9 +85,10 @@
         
         this.models.article = Backbone.Model.extend({
             full: function(callback){
+                var model = this;
                 this.sync('read', 'articles/' + this.id, {
                     success: function(data){
-                        var model = $.extend(this, data);              
+                        model = $.extend(model, data);              
                         callback(model);
                     }
                 });
@@ -139,7 +150,10 @@
                 return this;
             },
             events: {
-                //
+                'click .articles-list a' : function(e){
+                    self.router.navigate($(e.currentTarget).attr('href'), {trigger: true});
+                    return false;
+                }
             },
             initialize: function(){
                 this.render();
