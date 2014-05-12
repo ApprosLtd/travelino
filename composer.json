@@ -16,7 +16,9 @@
 	"require": {
 		"laravel/framework": "4.1.*",
         "michelf/php-markdown": "1.4.x-dev",
-        "serovvitaly/laravel-oauth": "dev-master"
+        "serovvitaly/laravel-oauth": "dev-master",
+        "mews/phpthumb": "dev-master",
+        "ruflin/Elastica": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

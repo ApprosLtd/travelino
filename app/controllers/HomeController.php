@@ -4,7 +4,7 @@ use \Michelf\Markdown;
 
 class HomeController extends BaseController {
 
-    public $layout = 'layout.index';
+    public $layout = 'home.layout';
     
 	/*
 	|--------------------------------------------------------------------------
@@ -23,11 +23,25 @@ class HomeController extends BaseController {
         //$this->layout->regions = Region::paginate(30);
         
 		//$this->layout->regions = Region::city()->paginate(30);
+        
+        $this->layout->content = '';
 	}
+    
+    
+    public function getNode($id)
+    {
+        $node = Article::find($id);
+        
+        $this->layout->content = $node->content;
+    }
     
     
     public function getInfo()
     {
+        //
+        
+        return;
+        
         echo phpinfo();
         
         return '';
