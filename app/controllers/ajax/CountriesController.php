@@ -10,25 +10,36 @@ class CountriesController extends AjaxController
     {
         $page = \Input::get('page', 1);
         
-        $records = \Country::where('description_ru', '!=', '')->take(30)->get();
+        $limit = $this->limit;
         
-        if ($records) {
-            $data = array('countries' => array());
-            foreach ($records AS $record) {
-                $data['countries'][] = array(
-                    'id'   => $record->id,
-                    'cid'  => $record->id,
-                    'short_description_ru'  => str_limit( strip_tags($record->description_ru) , 130, '...'),
-                    'name_en' => $record->lang('en_US')->name,
-                    'name_ru' => $record->lang('ru_RU')->name,
-                    'continent_id' => $record->continent()->id,
-                    'continent_name_en' => $record->continent()->lang('en_US')->name,
-                    'continent_name_ru' => $record->continent()->lang('ru_RU')->name,
-                );
-            }
-        } else {
+        $cache_tag = 'countries-page-' . $page . '-limit-' . $limit;
+        
+        $records = \Cache::rememberForever($cache_tag, function() use ($limit)
+        {
+            $records = \Country::where('description_ru', '!=', '')->take($limit)->get();
+            
             $data = array();
-        }
+            
+            if ($records) {
+                
+                foreach ($records AS $record) {
+                    $data[] = array(
+                        'id'   => $record->id,
+                        'cid'  => $record->id,
+                        'short_description_ru'  => str_limit( strip_tags($record->description_ru) , 130, '...'),
+                        'name_en' => $record->lang('en_US')->name,
+                        'name_ru' => $record->lang('ru_RU')->name,
+                        'continent_id' => $record->continent()->id,
+                        'continent_name_en' => $record->continent()->lang('en_US')->name,
+                        'continent_name_ru' => $record->continent()->lang('ru_RU')->name,
+                    );
+                }
+            }
+            
+            return $data;
+        });
+        
+        $data = array('countries' => $records);
         
         return \Response::json($data);
     }
