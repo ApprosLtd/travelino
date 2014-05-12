@@ -10,26 +10,35 @@ class CitiesController extends AjaxController
     {
         $page = \Input::get('page', 1);
         
-        $records = \City::take($this->limit)->cacheTags(array('cities-page-' . $page . '-limit-' . $this->limit))->remember(5)->get();
+        $limit = $this->limit;
         
-        if ($records) {
+        $cache_tag = 'cities-page-' . $page . '-limit-' . $limit;
+        
+        $records = \Cache::rememberForever($cache_tag, function() use ($limit)
+        {
+            $records = \City::take($limit)->get();
             
-            $data = array('cities' => array());
-            
-            foreach ($records AS $record) {
-                $data['cities'][] = array(
-                    'id'   => $record->id,
-                    'cid'  => $record->id,
-                    'name_en' => $record->lang('en_US')->name,
-                    'name_ru' => $record->lang('ru_RU')->name,
-                    'country_id' => $record->country()->id,
-                    'country_name_en' => $record->country()->lang('en_US')->name,
-                    'country_name_ru' => $record->country()->lang('ru_RU')->name,
-                );
-            }
-        } else {
             $data = array();
-        }
+            
+            if ($records) {
+                
+                foreach ($records AS $record) {
+                    $data[] = array(
+                        'id'   => $record->id,
+                        'cid'  => $record->id,
+                        'name_en' => $record->lang('en_US')->name,
+                        'name_ru' => $record->lang('ru_RU')->name,
+                        'country_id' => $record->country()->id,
+                        'country_name_en' => $record->country()->lang('en_US')->name,
+                        'country_name_ru' => $record->country()->lang('ru_RU')->name,
+                    );
+                }
+            }
+            
+            return $data;
+        });
+        
+        $data = array('cities' => $records);
         
         return \Response::json($data);
     }
