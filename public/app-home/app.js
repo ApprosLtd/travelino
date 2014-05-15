@@ -4,6 +4,8 @@
         
         this.dynamicContent = $('#dynamic-content');
         
+        this.scrollWindow = false;
+        
         this.router = new Backbone.Router();
         Backbone.history.start({pushState: true, hashChange: false});
         
@@ -39,6 +41,9 @@
     }
     
     App.prototype.windowScrolling = function(){
+        
+        var self = this;
+        
         $(window).scroll(function(){
             console.log('scroll');
         });
