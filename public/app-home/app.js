@@ -28,12 +28,20 @@
         this.initRoutes(); 
         this.initModels(); 
         this.initCollections(); 
-        this.initViews(); 
+        this.initViews();
+        
+        this.windowScrolling(); 
         
         this.articlesCollection = new this.collections.articles();
         this.articlesCollection.load(function(){
             self.showArticles();
         });      
+    }
+    
+    App.prototype.windowScrolling = function(){
+        $(window).scroll(function(){
+            console.log('scroll');
+        });
     }
     
     App.prototype.showArticles = function(){
