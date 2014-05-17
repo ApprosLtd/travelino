@@ -6,17 +6,54 @@ class ArticlesController extends AjaxController
 {    
     protected $limit = 50;
     
-    public function index()
+    
+    /**
+    * Возвращает JSON списка статей
+    * 
+    */
+    public static function index($page = 1, $limit = 30)
     {
-        $page = \Input::get('page', 1);
+        $page  = \Input::get('page', $page);
         
-        $limit = 30;
+        $limit = \Input::get('limit', $limit);
         
+        $json = array(
+            'success' => true,
+            'results' => static::cacheArticlesList($page, $limit),
+        );
+        
+        return \Response::json($json);
+    }
+    
+    
+    /**
+    * Возвращает JSON одной статьи
+    * 
+    * @param mixed $id
+    */
+    public function show($id)
+    {   
+        $record = $this->cacheArticleNode($id);
+        
+        return \Response::json($record);
+    }
+    
+    
+    /**
+    * Возвращает кэш списка статей
+    * 
+    * @param mixed $page
+    * @param mixed $limit
+    */
+    public static function cacheArticlesList($page = 1, $limit = 30)
+    {
         $cache_tag = 'articles-page-' . $page . '-limit-' . $limit;
         
-        $records = \Cache::rememberForever($cache_tag, function() use ($limit)
+        $records = \Cache::rememberForever($cache_tag, function() use ($page, $limit)
         {
-            $records = \Article::where('description', '!=', '')->take($limit)->get();
+            $offset = ($page - 1) * $limit;
+            
+            $records = \Article::where('description', '!=', '')->offset($offset)->take($limit)->get();
             
             $data = array();
             
@@ -39,16 +76,17 @@ class ArticlesController extends AjaxController
             return $data;
         });
         
-        $json = array(
-            'success' => true,
-            'results' => $records,
-        );
-        
-        return \Response::json($json);
+        return $records;
     }
     
-    public function show($id)
-    {   
+    
+    /**
+    * Возвращает кэш одной статьи
+    * 
+    * @param mixed $id
+    */
+    public function cacheArticleNode($id)
+    {
         $cache_tag = 'article-' . $id;
         
         $record = \Cache::rememberForever($cache_tag, function() use ($id)
@@ -62,6 +100,7 @@ class ArticlesController extends AjaxController
             return $record;
         });
         
-        return \Response::json($record);
+        return $record;
     }
+    
 }
