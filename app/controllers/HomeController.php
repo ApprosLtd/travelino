@@ -29,6 +29,25 @@ class HomeController extends BaseController {
 	}
     
     
+    public function getSitemap()
+    {
+        $sitemap = App::make("sitemap");
+
+        $sitemap->setCache('laravel.sitemap', 360000);
+
+        $articles = Article::where('title', '!=', '')->get();
+
+        if ($articles) {
+            foreach ($articles as $article) {
+                $url = URL::to('art/' . $article->translit);
+                $sitemap->add($url, $article->updated_at, '0.8', 'monthly');
+            }
+        }
+
+        return $sitemap->render('xml');
+    }
+
+
     public function getInfo()
     {
         $recs = Article::all();

@@ -120,6 +120,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Mews\Phpthumb\PhpthumbServiceProvider',
+        'Roumen\Sitemap\SitemapServiceProvider',
 	),
 
 	/*

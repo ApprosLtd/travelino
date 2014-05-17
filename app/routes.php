@@ -48,4 +48,6 @@ Route::controller('places', 'PlacesController');
 
 Route::get('art/{translit?}', 'ArticleController@getArticle');
 
+Route::get('sitemap.xml', 'HomeController@getSitemap');
+
 Route::controller('/', 'HomeController');
