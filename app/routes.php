@@ -46,6 +46,6 @@ Route::get('cities/{id?}', 'CitiesController@getIndex');
 
 Route::controller('places', 'PlacesController');
 
-Route::get('node/{id?}', 'HomeController@getNode');
+Route::get('art/{translit?}', 'ArticleController@getArticle');
 
 Route::controller('/', 'HomeController');
