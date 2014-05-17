@@ -18,6 +18,7 @@
         "michelf/php-markdown": "1.4.x-dev",
         "serovvitaly/laravel-oauth": "dev-master",
         "jbroadway/urlify": "1.0.*@dev",
+        "roumen/sitemap": "dev-master",
         "mews/phpthumb": "dev-master",
         "ruflin/Elastica": "dev-master"
 	},
