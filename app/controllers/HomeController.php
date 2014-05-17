@@ -37,7 +37,7 @@ class HomeController extends BaseController {
             }
         }
         
-        $this->layout->paginator = Paginator::make($items, 200, 30);;
+        $this->layout->paginator = Paginator::make($items, 200, 30)->links();
         
         $this->layout->content = $items_content;
 	}

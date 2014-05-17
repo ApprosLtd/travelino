@@ -37,7 +37,13 @@
         </div>
       </div>
       <div class="col-lg-10 row" id="dynamic-content">
-      {{$content}}   
+          <div style="text-align: center;">
+              {{$paginator}}
+          </div>
+          {{$content}}
+          <div style="text-align: center;">
+              {{$paginator}}
+          </div>
       </div>
     </div>
   </div>
