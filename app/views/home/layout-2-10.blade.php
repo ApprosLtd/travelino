@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-  <title>Laravel PHP Framework</title>
+  <title>{{$title}}</title>
   <link rel="stylesheet" type="text/css" href="/packages/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/fix2.css">
 </head>

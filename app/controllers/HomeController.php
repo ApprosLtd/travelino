@@ -4,7 +4,7 @@ use \Michelf\Markdown;
 
 class HomeController extends BaseController {
 
-    public $layout = 'home.layout';
+    public $layout = 'home.layout-2-10';
     
 	/*
 	|--------------------------------------------------------------------------
@@ -24,7 +24,22 @@ class HomeController extends BaseController {
         
 		//$this->layout->regions = Region::city()->paginate(30);
         
-        $this->layout->content = '';
+        $page  = \Input::get('page', 1);
+        
+        $this->layout->title = 'Главная';
+        
+        $items = \Ajax\ArticlesController::cacheArticlesList($page);
+        
+        $items_content = '';
+        if ($items) {
+            foreach ($items as $item) {
+                $items_content .= View::make('home.item_content', (array) $item);
+            }
+        }
+        
+        $this->layout->paginator = Paginator::make($items, 200, 30);;
+        
+        $this->layout->content = $items_content;
 	}
     
     
