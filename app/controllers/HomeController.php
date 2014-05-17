@@ -1,23 +1,9 @@
 <?php
 
-use \Michelf\Markdown;
-
 class HomeController extends BaseController {
 
     public $layout = 'home.layout-2-10';
-    
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+
 	public function getIndex()
 	{
         //$this->layout->regions = Region::paginate(30);
@@ -28,7 +14,7 @@ class HomeController extends BaseController {
         
         $this->layout->title = 'Главная';
         
-        $items = \Ajax\ArticlesController::cacheArticlesList($page);
+        $items = Article::cacheArticlesList($page);
         
         $items_content = '';
         if ($items) {
@@ -37,25 +23,22 @@ class HomeController extends BaseController {
             }
         }
         
-        $this->layout->paginator = Paginator::make($items, 200, 30)->links();
+        $this->layout->paginator = Paginator::make($items, 3500, 30)->links();
         
         $this->layout->content = $items_content;
 	}
     
     
-    public function getNode($id)
-    {
-        $node = Article::find($id);
-        
-        $this->layout->content = $node->content;
-    }
-    
-    
     public function getInfo()
     {
-        //
+        $recs = Article::all();
+
+        foreach ($recs as $rec) {
+            $rec->translit = \URLify::filter( $rec->title );
+            $rec->save();
+        }
         
-        return;
+        return '5';
         
         echo phpinfo();
         
@@ -86,7 +69,7 @@ class HomeController extends BaseController {
         
         $content = $revision['*'];
         
-        $content = Markdown::defaultTransform($content);
+        $content = \Michelf\Markdown::defaultTransform($content);
         
         return $content;
     }
