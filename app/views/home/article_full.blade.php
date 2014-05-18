@@ -3,5 +3,5 @@
     <p>{{$description}}</p>
     <p><img alt="{{$title}}" src="{{$picture}}" class="main-image"></p>
     <div>{{$content}}</div>
-    <p>Источник: <a href="http://www.euromag.ru" target="_blanck">www.euromag.ru</a></p>
+    <!--noindex--><p>Источник: <a href="http://www.euromag.ru" target="_blanck">www.euromag.ru</a></p><!--/noindex-->
 </article>
