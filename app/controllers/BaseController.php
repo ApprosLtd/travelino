@@ -13,7 +13,7 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
             
-            $this->layout->title = '';
+            $this->layout->title = 'Туристический альманах';
 		}
 	}
 
