@@ -14,6 +14,8 @@ class ArticleController extends BaseController {
     {
         $article = Article::cacheArticleNode($translit);
 
+        $this->layout->title = $article['title'];
+
         $this->layout->content = View::make('home.article_full', $article);
     }
 
