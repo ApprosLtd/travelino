@@ -1,6 +1,6 @@
 <section class="flymenu">
     <header>
-        <h1><span>Навигация</span></h1>
+        <span>:)</span>
     </header>
     <nav>
         <ul>
