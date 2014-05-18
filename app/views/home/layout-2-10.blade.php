@@ -23,5 +23,6 @@
       </div>
     </div>
   </div>
+@include('common_scripts')
 </body>
 </html>
