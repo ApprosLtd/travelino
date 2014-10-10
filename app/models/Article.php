@@ -15,11 +15,11 @@ class Article extends Eloquent
     {
         $cache_tag = 'articles-page-' . $page . '-limit-' . $limit;
 
-        $records = \Cache::rememberForever($cache_tag, function() use ($page, $limit)
+        $records = \Cache::remember($cache_tag, 1, function() use ($page, $limit)
         {
             $offset = ($page - 1) * $limit;
 
-            $records = \Article::where('description', '!=', '')->offset($offset)->take($limit)->get();
+            $records = \Article::where('description', '!=', '')->offset($offset)->take($limit)->orderBy('created_at', 'DESC')->get();
 
             $data = array();
 
@@ -28,6 +28,8 @@ class Article extends Eloquent
                 foreach ($records AS $record) {
 
                     $rec = new \stdClass();
+                    
+                    $record->description = strip_tags($record->description);
 
                     $rec->id          = $record->id;
                     $rec->note        = \Str::limit($record->description, 170);
@@ -112,7 +114,15 @@ class Article extends Eloquent
         
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $image_file)) {
             
-            $file = 'http://www.euromag.ru' . $this->source_picture;
+            $source_domain = '';
+            
+            $source_picture_prefix = strtolower( substr($this->source_picture, 0, 4) );
+            
+            if ( ($source_picture_prefix != 'http') and ($this->source_id > 0) ) {
+                $source_domain = 'http://www.euromag.ru';
+            }
+            
+            $file = $source_domain . $this->source_picture;
 
             try {
                 $phpthumb = App::make('phpthumb');

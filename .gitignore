@@ -9,4 +9,5 @@ Thumbs.db
 .idea
 /app/config/database.php
 /app/config/cache.php
+/app/storage/*
 /public/data/*

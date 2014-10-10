@@ -40,6 +40,7 @@
       {{$content}}   
       </div>
     </div>
+    @include('home.common.metrika')
   </div>
 </body>
 </html>

@@ -3,5 +3,7 @@
     <p>{{$description}}</p>
     <p><img alt="{{$title}}" src="{{$picture}}" class="main-image"></p>
     <div>{{$content}}</div>
+    @if($source_id > 0)
     <!--noindex--><p>Источник: <a href="http://www.euromag.ru" target="_blanck">www.euromag.ru</a></p><!--/noindex-->
+    @endif
 </article>
