@@ -4,6 +4,7 @@ class WhoisController extends \BaseController
 {
     public function getIndex()
     {
-        return 'foo';
+        $whois = new \PhpWhois\Whois\Whois('appros.ru');
+        return $whois->lookup();
     }
 }
