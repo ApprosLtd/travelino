@@ -20,7 +20,8 @@
         "jbroadway/urlify": "1.0.*@dev",
         "roumen/sitemap": "dev-master",
         "mews/phpthumb": "dev-master",
-        "ruflin/Elastica": "dev-master"
+        "ruflin/Elastica": "dev-master",
+        "maastermedia/phpwhois": "1.0.*@dev"
 	},
 	"autoload": {
 		"classmap": [
