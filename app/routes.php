@@ -36,6 +36,8 @@ Route::any('/ajax/{controller}/{action?}', function($controller, $action = 'inde
 
 
 
+Route::controller('whois', 'WhoisController');
+
 Route::controller('continents', 'ContinentsController');
 
 Route::get('image/{width?}/{height?}/{id?}', 'ImageController@getIndex');
